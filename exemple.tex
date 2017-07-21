@@ -1,0 +1,46 @@
+%% Exemple d'utilisation de la classe rapportcpe
+%% Copyright (C) 2017  Mayeul Cantan <mayeul.cantan@gmail.com>
+% Ce code est publié sous licence WTFPL. Faites-en ce que bon vous semble.
+
+\documentclass{rapportcpe}
+\usepackage[french]{babel} % Ajuster french/english au besoin. Règle certains messages comme "Table des matières"
+
+%\usepackage{helvet} % La police Arial est conseillée
+
+\usepackage[unicode]{hyperref} % Conseillé, ajoute la table des matières aux métadonnées du PDF, et des liens cliquables.
+
+\anneestage{20xx-20xx} % Année du stage
+\specialite{ETI} % ETI ou CGP
+\debutstage{jj/mm/aaaa}
+\finstage{jj/mm/aaaa}
+\typestage{CES} % EXP, EXE, INGE, CES, CES1, CES2 ou PFE. Cela coche la bonne case
+
+\logo{logoCPE.pdf} % note: requiert le packet avec la fonction \includegraphics correspondant au format de fichier
+\entreprise{Nom de l'entreprise}
+\ville{Ville de l'entreprise}
+\pays{pays de l'entreprise}
+\maitrestage{Prénom NOM} % Du maître de stage
+\maitrestagefonction{Fonction du maître de stage}
+
+\title{Titre du stage en Anglais}
+\titre{Titre du stage en Français}
+
+\confidentialfalse % Ou confidentialtrue
+
+\author{Nom de l'étudiant}
+
+\begin{document}
+	\tableofcontents % Affiche la table des matières
+	Corps du document
+	\section{Première section}
+	\subsection{Sous section}
+
+\pagebreak
+	\subsection{Deuxième sous section}
+
+\section{Annexes}
+\appendix % Les annexes commenceront ici
+
+\section{Annexe 1}
+Autre contenu
+\end{document}

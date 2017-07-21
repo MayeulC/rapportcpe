@@ -1,0 +1,13 @@
+# ignore les fichiers temporaires dûs à la compilation
+*.aux
+*.log
+*.toc
+*.out
+*.gz
+
+# ignore les fichiers temporaires des éditeurs
+*swp
+
+# ignore les fichiers cachés des divers SE
+.directory
+*.db
