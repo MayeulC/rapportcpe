@@ -146,7 +146,7 @@
 
 	\the\titre
 	\\\\
-
+	\noindent
 	\textbf{Titre du rapport en anglais :}
 
 	\@title
@@ -163,12 +163,11 @@
 	\noindent
 	\textbf{Nom de l'entreprise/organisme : } \the\entreprise
 	\\\\
+        \noindent Ville : \the\ville \hfill Pays : \the\pays
 
-	Ville : \the\ville \hfill Pays : \the\pays
+        \noindent Nom et Prénom du maître de stage : \the\maitrestage
 
-	Nom et Prénom du maître de stage : \the\maitrestage
-
-	Fonction : \the\maitrestagefonction
+        \noindent Fonction : \the\maitrestagefonction
 
 	\pagebreak
 	\restoregeometry
