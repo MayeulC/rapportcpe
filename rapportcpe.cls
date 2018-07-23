@@ -26,7 +26,8 @@
 \usepackage{xstring} % Comparaison de chaînes de caractères
 \usepackage{amsfonts} % Pour symboles supplémentaires (cases à cocher: \checkmark)
 \usepackage{makecell} % Rend plus facile le saut de ligne dans un tableau
-\usepackage{graphicx} % Pour inclure les logo
+\usepackage{graphicx} % Pour inclure les logos
+\usepackage{environ} % \NewEnviron donne plus facilement accès au corps avec \BODY
 
 % Variables qui seront modifiables par l'utilisateur:
 \newtoks\anneestage
@@ -57,6 +58,23 @@
 \def\isstagecessemun{\IfStrEq{\the\typestage}{CES1}{\ticked}{\untick}}
 \def\isstagecessemdeux{\IfStrEq{\the\typestage}{CES2}{\ticked}{\untick}}
 \def\isstagepfe{\IfStrEq{\the\typestage}{PFE}{\ticked}{\untick}}
+
+
+
+\def\contenuresumestage{}
+\gdef\contenuresumestage{
+	Utilisez l'environnement "resumestage" pour inclure votre résumé en français ici:
+	\textbackslash begin \textbraceleft resumestage \textbraceright
+	Texte ici
+	\textbackslash end \textbraceleft resumestage \textbraceright
+}
+
+\NewEnviron{resumestage}{
+	\expandafter\gdef\expandafter\contenuresumestage\expandafter{\BODY}
+	% Redéfinit globalement resumestagecontent pour être \BODY après une expansion
+	%TODO: remplacer par quelque chode de plus clair comme:
+
+}
 
 \usepackage{geometry} %utiliser [showframe] pour montrer les marges.
 
@@ -181,6 +199,11 @@
 	\begin{tabular}{lll}
 		\specialitetabular
 	\end{tabular}
+
+\section*{Résumé du stage}
+%TODO: au moins vérifier le critère des 300 mots mini automatiquement
+	\contenuresumestage
+
 }
 
 \endinput
