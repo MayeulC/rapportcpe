@@ -28,6 +28,7 @@
 \usepackage{makecell} % Rend plus facile le saut de ligne dans un tableau
 \usepackage{graphicx} % Pour inclure les logos
 \usepackage{environ} % \NewEnviron donne plus facilement accès au corps avec \BODY
+\usepackage{xcolor} %TODO Ne fonctionne pas quand est inclus depuis l'extérieur, pour une raison inconnue
 
 % Variables qui seront modifiables par l'utilisateur:
 \newtoks\anneestage
