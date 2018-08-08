@@ -136,7 +136,7 @@
 		\begin{flushright}
 			\thepage
 		\end{flushright}
-		\tableau
+		\makebox[\textwidth]{\tableau} % Centre le tableau en ignorant les marges
 	}
 }
 
