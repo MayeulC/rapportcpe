@@ -174,8 +174,12 @@
 	\topskip0pt
 	\vspace*{\fill} % S'étend pour remplir l'espace vertical
 
-	\ifdefined\@logo
-	\includegraphics[width=\textwidth]{\@logo}
+	\ifdefined\englishkeywords
+		\englishkeywords
+	\else
+		\ifdefined\@logo
+		\includegraphics[width=\textwidth]{\@logo}
+		\fi
 	\fi
 
 	\vspace*{\fill}
