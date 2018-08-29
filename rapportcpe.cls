@@ -29,6 +29,7 @@
 \usepackage{graphicx} % Pour inclure les logos
 \usepackage{environ} % \NewEnviron donne plus facilement accès au corps avec \BODY
 \usepackage{xcolor} %TODO Ne fonctionne pas quand est inclus depuis l'extérieur, pour une raison inconnue
+\usepackage{ifthen} % Pour isodd...
 
 % Variables qui seront modifiables par l'utilisateur:
 \newtoks\anneestage
@@ -191,10 +192,15 @@
 	\pagebreak
 	\restoregeometry
 }
-\AtEndDocument {
 
+
+\AtEndDocument {
+\ifdefined\noresume
+
+\else % noresume
 	\pagebreak
-	\thispagestyle{firststyle}
+	\pagestyle{firststyle}
+	\ifthenelse{\isodd{\thepage}}{\stepcounter{page}}
 	\nomprenomformatte
 
 	\begin{tabular}{lll}
@@ -205,6 +211,7 @@
 %TODO: au moins vérifier le critère des 300 mots mini automatiquement
 	\contenuresumestage
 
+\fi % noresume
 }
 
 \endinput
